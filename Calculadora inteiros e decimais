@@ -1,0 +1,20 @@
+public class Main {
+    public static void main(String[] args) {
+        // Instanciando calculadora para inteiros
+        Calculadora calcInt = new CalculadoraInteiros();
+        double resultadoInt = calcInt.soma(1, 2, 3, 4);
+        System.out.println("Resultado da soma de inteiros: " + resultadoInt);
+        
+        // Instanciando calculadora para decimais
+        Calculadora calcDecimal = new CalculadoraDecimais();
+        double resultadoDecimal = calcDecimal.soma(1.1, 2.2, 3.3);
+        System.out.println("Resultado da soma de decimais: " + resultadoDecimal);
+        
+        // Tentativa de soma com tipos incorretos (deve lançar exceção)
+        try {
+            calcInt.soma(1, 2.2); // Isso deve lançar uma exceção
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro: " + e.getMessage());
+        }
+    }
+}
